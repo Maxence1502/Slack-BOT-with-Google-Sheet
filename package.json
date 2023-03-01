@@ -1,0 +1,13 @@
+{
+  "name": "unifai-slack-bot",
+  "version": "1.0.0",
+  "main": "unifai.js",
+  "dependencies": {
+    "botbuilder-adapter-slack": "^1.0.8",
+    "botkit": "^4.6.2",
+    "dotenv": "^16.0.3",
+    "googleapis": "^105.0.0",
+    "request": "^2.88.2"
+  },
+  "author": "Maxence SALOMON"
+}
