@@ -6,6 +6,5 @@ WORKDIR /src
 RUN npm install
 
 COPY unifai.js /src
-COPY .env /src/.env
 
 CMD ["node", "unifai"]
