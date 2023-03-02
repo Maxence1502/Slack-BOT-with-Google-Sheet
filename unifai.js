@@ -17,15 +17,15 @@ const controller = new Botkit({
 })
 
 controller.ready(() => {
-    controller.hears(['test'], ['direct_message'],
+    controller.hears(['test'], ['message', 'direct_message'],
         async (bot, message) => {
-            await bot.reply(message, message + ':smile_cat:')
+            await bot.reply(message,':smile_cat:')
         })
 })
 
 console.log("Debug list users")
 
-controller.on('bot_ready', (bot) => {
+controller.on('spawn', (bot) => {
     console.log(`Le bot ${bot.identity.name} est en ligne !`);
 
     bot.api.users.list({}, (err, res) => {
@@ -37,3 +37,16 @@ controller.on('bot_ready', (bot) => {
         users.forEach((user) => console.log(user.name, user.id));
     });
 });
+
+    /*
+const userId = 'USER_ID'; // Remplacer USER_ID par l'ID de l'utilisateur Slack cible
+const message = 'Hello!'; // Message à envoyer
+
+bot.api.im.open({ user: userId }, (err, res) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    const dmChannel = res.channel.id;
+    bot.say({ text: message, channel: dmChannel });
+});*/
